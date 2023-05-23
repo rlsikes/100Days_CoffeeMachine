@@ -77,7 +77,7 @@ def process_payment(drink, funds, resources):
     tender = ((quarters * 0.25) + (dimes * 0.10) + (nickles * 0.05) + (pennies * 0.01))
     enough_tender = True
     if tender > cost:
-        change = tender - cost
+        change = round((tender - cost), 2)
         print(f"Here is your change. ${change}")
     if tender < cost:
         enough_tender = False
